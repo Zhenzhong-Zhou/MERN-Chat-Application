@@ -2,7 +2,7 @@ import {io} from "socket.io-client";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {Home, Login} from "./pages";
 
-const socket = io(process.env.REACT_APP_LOCAL_URL);
+const socket = io(`http://localhost:9000`);
 
 const App = ()  => {
 	return (
