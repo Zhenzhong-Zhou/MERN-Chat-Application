@@ -5,8 +5,8 @@ const userSchema = new mongoose.Schema({
 		email: {type: String, required: true, unique: true, max: 50},
 		password: {type: String, required: true, min: 6},
 		messages: [{
-			messageId: {type:String},
-			message: {type:String}
+			messageId: {type: String},
+			message: {type: String, default:[]}
 		}],
 		isAdmin: {type: Boolean, default: false}
 	},
