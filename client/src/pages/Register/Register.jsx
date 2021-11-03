@@ -2,7 +2,7 @@ import {useState} from "react";
 import {useHistory} from "react-router-dom";
 import {axiosUser} from "../../api";
 
-const Register = ({socket}) => {
+const Register = () => {
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
