@@ -3,7 +3,7 @@ import Message from "../models/message.js";
 export const messages = (io, socket) => {
 	socket.on("send_messages", (messageData) => {
 		const message = new Message({
-			username: messageData.username,
+			user: messageData.auth,
 			messages: messageData.message,
 			room: messageData.room,
 		});
