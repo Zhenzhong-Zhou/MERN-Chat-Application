@@ -13,7 +13,7 @@ const Login = () => {
 	const sign_in = (e) => {
 		e.preventDefault();
 		login(dispatch, {username, password});
-		history.push("/room");
+		history.push("/");
 	};
 
 	return (

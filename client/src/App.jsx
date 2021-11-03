@@ -11,9 +11,14 @@ const App = ()  => {
 			<Switch>
 				<Route exact path={"/register"} component={() => (auth ? <Redirect to={"/"}/> : <Register/>)}/>
 				<Route exact path={"/login"} component={() => (auth ? <Redirect to={"/"}/> : <Login/>)}/>
-				<Route exact path={"/"} component={Home}/>
-				<Route exact path={"/room"} component={Room} socket={socket}/>
-				<Route exact path={""} component={NotFound}/>
+				{auth ?
+					(<>
+						<Route exact path={"/"} component={Home}/>
+						<Route exact path={"/room"} component={Room} socket={socket}/>
+						{/*<Route exact path={""} component={NotFound}/>*/}
+					</>)
+					: <Redirect to={"/login"}/>
+				}
 			</Switch>
 		</BrowserRouter>
 	);
