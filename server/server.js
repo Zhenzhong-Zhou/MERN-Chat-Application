@@ -13,7 +13,7 @@ import indexRoutes from "./routes/index.js";
 import authRoutes from "./routes/auth.js";
 
 // Handlers Imports
-import {register} from "./handlers/auth.js";
+import {joinRoom} from "./handlers/joinRoom.js";
 import {messages} from "./handlers/message.js";
 
 // Initialization App
@@ -40,7 +40,7 @@ app.use("/api/auth", authRoutes);
 
 // Socket.io connection
 const onConnection = (socket) => {
-	register(io, socket);
+	joinRoom(io, socket);
 	messages(io, socket);
 	socket.on("disconnect", () => {
 		console.log(`${socket.id} has left...`)
