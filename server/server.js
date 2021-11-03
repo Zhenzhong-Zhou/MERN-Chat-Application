@@ -10,6 +10,7 @@ import cors from "cors";
 
 // Routes Imports
 import indexRoutes from "./routes/index.js";
+import authRoutes from "./routes/auth.js";
 
 // Handlers Imports
 import {register} from "./handlers/auth.js";
@@ -35,6 +36,7 @@ app.use(cors());
 
 // Routes
 app.use("/", indexRoutes);
+app.use("/api/auth", authRoutes);
 
 // Socket.io connection
 const onConnection = (socket) => {
