@@ -1,5 +1,5 @@
 import axios from "axios";
-import {loginFailure, loginStart, loginSuccess} from "../redux/auth";
+import {loginFailure, loginStart, loginSuccess, logoutAuth} from "../redux/auth";
 
 export const axiosUser = axios.create({
 	baseURL: process.env.REACT_APP_BASE_LOCAL_URL
@@ -18,4 +18,8 @@ export const login = async (dispatch, user) => {
 	} catch (error) {
 		dispatch(loginFailure());
 	}
+};
+
+export const logout = (dispatch, user) => {
+	dispatch(logoutAuth(user));
 };
