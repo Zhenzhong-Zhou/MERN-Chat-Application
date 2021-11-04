@@ -1,8 +1,10 @@
 import {Link} from "react-router-dom";
+import {NavBar} from "../../components";
 
 const Home = () => {
 	return (
 		<div>
+			<NavBar/>
 			<h1>Home</h1>
 			<h3>Loading page / component</h3><br/>
 			<Link to={"/register"}><span>Register</span></Link>

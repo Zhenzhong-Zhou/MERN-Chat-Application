@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {NavBar} from "../index";
 
 const Chat = ({socket, auth, room}) => {
 	const [currentMessage, setCurrentMessage] = useState();
@@ -23,6 +24,7 @@ const Chat = ({socket, auth, room}) => {
 
 	return (
 		<div>
+			<NavBar/>
 			<div className={"chat-header"}>
 				<p>Live Chat</p>
 			</div>
